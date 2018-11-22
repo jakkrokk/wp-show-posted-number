@@ -17,7 +17,7 @@ You can analyze following datas.
 - Total Posts(Graph)
 
 ## Licence
-[MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
+MIT
 
 ## Author
 [jakkrokk](https://github.com/jakkrokk)
