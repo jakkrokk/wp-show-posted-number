@@ -1,0 +1,19 @@
+#wpwrap {
+	background-color: #fff;
+}
+.graph {
+	width: 100%;
+	height: 200px;
+}
+
+#tooltip {
+	position: absolute;
+	display: none;
+	border: 1px solid #fdd;
+	padding: 8px;
+	background-color: #fff;
+	opacity: 0.80;
+}
+.header {
+	margin-top:24px;
+}
