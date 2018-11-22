@@ -3,10 +3,7 @@ $path = getClassPath();
 require_once($path);
 $Spn = new Spn();
 $postedNumbers = $Spn->getPostedNumbers();
-
 ?>
-
-
 <link  href="<?php echo plugins_url('show-post-numbers/bulma.min.css');?>" rel="stylesheet" type="text/css"/>
 <link  href="<?php echo plugins_url('show-post-numbers/style.css');?>" rel="stylesheet" type="text/css"/>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
