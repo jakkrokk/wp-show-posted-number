@@ -1,6 +1,5 @@
 # wp-show-posted-Numbers
 
-Overview
 ## Description
 wp-show-posted-Numbers is wordpress plugin which shows your wordpress post history.
 
