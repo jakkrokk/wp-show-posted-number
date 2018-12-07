@@ -26,10 +26,10 @@ $(function() {
 		data: [ <?php echo join(',',$postedNumbers['raws']);?> ]
 	}];
 	var ticks1 = [ <?php echo join(',',$postedNumbers['ticks']);?> ];
-	var opt1 = CreateGraph.opt1;
+	var opt1 = GraphOptions.lineBar;
 	opt1.xaxis.ticks = ticks1.filter((el,idx,arr) => { m = Math.round(arr.length / 10,0); return idx % m == (m - 1)});
 	$.plot($("#graph1"),dat1,opt1);
-	$("#graph1").bind("plothover",CreateGraph.tooltip);
+	$("#graph1").bind("plothover",GraphOptions.tooltip);
 
 
 	var dat2 = [{
@@ -41,10 +41,10 @@ $(function() {
 		data: [ <?php echo join(',',$postedNumbers['weekdayRaw']);?> ]
 	}];
 	var ticks2 = [ <?php echo join(',',$postedNumbers['weekdayLabel']);?> ];
-	var opt2 = CreateGraph.opt1;
+	var opt2 = GraphOptions.lineBar;
 	opt2.xaxis.ticks = ticks2;
 	$.plot($("#graph2"),dat2,opt2);
-	$("#graph2").bind("plothover",CreateGraph.tooltip);
+	$("#graph2").bind("plothover",GraphOptions.tooltip);
 
 
 	var dat3 = [{
@@ -56,15 +56,15 @@ $(function() {
 		data: [ <?php echo join(',',$postedNumbers['sum']);?> ]
 	}];
 	var ticks3 = [ <?php echo join(',',$postedNumbers['ticks']);?> ];
-	var opt3 = CreateGraph.opt1;
+	var opt3 = GraphOptions.lineBar;
 	opt3.xaxis.ticks = ticks3.filter((el,idx,arr) => { m = Math.round(arr.length / 8,0); return idx % m == (m - 1)});
 	$.plot($("#graph3"),dat3,opt3);
-	$("#graph3").bind("plothover",CreateGraph.tooltip);
+	$("#graph3").bind("plothover",GraphOptions.tooltip);
 
 
 	var dat4 = [{
 			label: 'Average',
-			color: '#00D1B2',
+			color: '#ffdd57',
 			bars: { show: false },
 			lines: { show: true },
 			points: { show: true },
@@ -78,17 +78,18 @@ $(function() {
 			data: [ <?php echo join(',',$postWordCount['graph']['maxByMonth']);?> ]
 		},{
 			label: 'Min',
-			color: '#ffdd57',
+			color: '#00D1B2',
 			bars: { show: false },
 			lines: { show: true },
 			points: { show: true },
 			data: [ <?php echo join(',',$postWordCount['graph']['minByMonth']);?> ]
 		}];
 	var ticks4 = [ <?php echo join(',',$postWordCount['ticks']['byMonth']);?> ];
-	var opt4 = CreateGraph.opt2;
+	var opt4 = GraphOptions.lineBar;
+	opt4.lines.fill = false;
 	opt4.xaxis.ticks = ticks4.filter((el,idx,arr) => { m = Math.round(arr.length / 8,0); return idx % m == (m - 1)});
 	$.plot($("#graph4"),dat4,opt4);
-	$("#graph4").bind("plothover",CreateGraph.tooltip);
+	$("#graph4").bind("plothover",GraphOptions.tooltip);
 
 	var dat5 = [{
 			label: 'Longer&nbsp;&nbsp;' + <?php echo $postWordCount['graph']['ratio']['longer'];?> + ' posts',
@@ -107,7 +108,7 @@ $(function() {
 			color: '#99ece0',
 			data: <?php echo $postWordCount['graph']['ratio']['short'];?>
 		}];
-	var opt5 = CreateGraph.opt3;
+	var opt5 = GraphOptions.pie;
 	$.plot($("#graph5"),dat5,opt5);
 });
 
@@ -214,7 +215,6 @@ $(function() {
 </div>
 </section>
 
-
 <section class="section">
 <div class="container">
 	<div class="columns">
@@ -233,10 +233,10 @@ $(function() {
 			</div>
 			<div class="">
 				<table class="table is-bordered" style="float:right;">
-					<tr><td class="is-primary">Shorter</td><td>- <?php echo $postWordCount['graph']['ratio_base']['short'];?></td></tr>
-					<tr><td class="is-primary">Short</td><td><?php echo $postWordCount['graph']['ratio_base']['short'];?> - <?php echo $postWordCount['graph']['ratio_base']['avg'];?></td></tr>
-					<tr><td class="is-danger">Long</td><td><?php echo $postWordCount['graph']['ratio_base']['avg'];?> -  <?php echo $postWordCount['graph']['ratio_base']['long'];?></td></tr>
-					<tr><td class="is-danger">Longer</td><td><?php echo $postWordCount['graph']['ratio_base']['long'];?> -</td></tr>
+					<tr><td class="is-primary">Shorter</td><td>- <?php echo $postWordCount['graph']['ratio_base']['short'];?> chars</td></tr>
+					<tr><td class="is-primary">Short</td><td><?php echo $postWordCount['graph']['ratio_base']['short'];?> chars - <?php echo $postWordCount['graph']['ratio_base']['avg'];?> chars</td></tr>
+					<tr><td class="is-danger">Long</td><td><?php echo $postWordCount['graph']['ratio_base']['avg'];?> chars -  <?php echo $postWordCount['graph']['ratio_base']['long'];?> chars</td></tr>
+					<tr><td class="is-danger">Longer</td><td><?php echo $postWordCount['graph']['ratio_base']['long'];?> chars -</td></tr>
 				</table>
 			</div>
 		</div>
