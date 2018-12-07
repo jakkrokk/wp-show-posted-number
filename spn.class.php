@@ -129,7 +129,6 @@ Class Spn {
 			$raw[$row->d] = $row;
 		}
 
-		//Create raw data.
 		foreach($results['status']['range'] as $k=>$date) {
 			if (isset($raw[$date])) {
 				$row = $raw[$date];
@@ -193,5 +192,6 @@ Class Spn {
 		$f = $s[0];
 		return str_pad($f,strlen($s),0,STR_PAD_RIGHT);
 	}
+
 
 }
