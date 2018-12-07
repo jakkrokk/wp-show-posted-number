@@ -1,10 +1,12 @@
 # wp-show-posted-Numbers
-![screenshot](https://github.com/jakkrokk/wp-show-posted-number/blob/master/screenshot.png "screenshot")
 
+Overview
 ## Description
 wp-show-posted-Numbers is wordpress plugin which shows your wordpress post history.
 
 ## Viewable statuses
+
+### Summary
 - Total Posts
 - Total days
 - Post days
@@ -14,9 +16,13 @@ wp-show-posted-Numbers is wordpress plugin which shows your wordpress post histo
 - Max Post Text
 - Min Post Text
 - Average Post Text
+
+### Post history
 - Daily posts(Graph)
 - By Weekdays(Graph)
 - Total Posts(Graph)
+
+### Post status
 - Text Counts By Month(Graph)
 - Text Count Ratio(Graph)
 
