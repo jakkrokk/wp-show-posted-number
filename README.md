@@ -1,4 +1,5 @@
 # wp-show-posted-Numbers
+![screenshot](https://github.com/jakkrokk/wp-show-posted-number/blob/master/screenshot.png "screenshot")
 
 Overview
 ## Description
