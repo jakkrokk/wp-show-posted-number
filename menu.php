@@ -26,10 +26,10 @@ $(function() {
 		data: [ <?php echo join(',',$postedNumbers['raws']);?> ]
 	}];
 	var ticks1 = [ <?php echo join(',',$postedNumbers['ticks']);?> ];
-	var opt1 = GraphOptions.lineBar;
+	var opt1 = CreateGraph.opt1;
 	opt1.xaxis.ticks = ticks1.filter((el,idx,arr) => { m = Math.round(arr.length / 10,0); return idx % m == (m - 1)});
 	$.plot($("#graph1"),dat1,opt1);
-	$("#graph1").bind("plothover",GraphOptions.tooltip);
+	$("#graph1").bind("plothover",CreateGraph.tooltip);
 
 
 	var dat2 = [{
@@ -41,10 +41,10 @@ $(function() {
 		data: [ <?php echo join(',',$postedNumbers['weekdayRaw']);?> ]
 	}];
 	var ticks2 = [ <?php echo join(',',$postedNumbers['weekdayLabel']);?> ];
-	var opt2 = GraphOptions.lineBar;
+	var opt2 = CreateGraph.opt1;
 	opt2.xaxis.ticks = ticks2;
 	$.plot($("#graph2"),dat2,opt2);
-	$("#graph2").bind("plothover",GraphOptions.tooltip);
+	$("#graph2").bind("plothover",CreateGraph.tooltip);
 
 
 	var dat3 = [{
@@ -56,15 +56,15 @@ $(function() {
 		data: [ <?php echo join(',',$postedNumbers['sum']);?> ]
 	}];
 	var ticks3 = [ <?php echo join(',',$postedNumbers['ticks']);?> ];
-	var opt3 = GraphOptions.lineBar;
+	var opt3 = CreateGraph.opt1;
 	opt3.xaxis.ticks = ticks3.filter((el,idx,arr) => { m = Math.round(arr.length / 8,0); return idx % m == (m - 1)});
 	$.plot($("#graph3"),dat3,opt3);
-	$("#graph3").bind("plothover",GraphOptions.tooltip);
+	$("#graph3").bind("plothover",CreateGraph.tooltip);
 
 
 	var dat4 = [{
 			label: 'Average',
-			color: '#ffdd57',
+			color: '#00D1B2',
 			bars: { show: false },
 			lines: { show: true },
 			points: { show: true },
@@ -78,18 +78,17 @@ $(function() {
 			data: [ <?php echo join(',',$postWordCount['graph']['maxByMonth']);?> ]
 		},{
 			label: 'Min',
-			color: '#00D1B2',
+			color: '#ffdd57',
 			bars: { show: false },
 			lines: { show: true },
 			points: { show: true },
 			data: [ <?php echo join(',',$postWordCount['graph']['minByMonth']);?> ]
 		}];
 	var ticks4 = [ <?php echo join(',',$postWordCount['ticks']['byMonth']);?> ];
-	var opt4 = GraphOptions.lineBar;
-	opt4.lines.fill = false;
+	var opt4 = CreateGraph.opt2;
 	opt4.xaxis.ticks = ticks4.filter((el,idx,arr) => { m = Math.round(arr.length / 8,0); return idx % m == (m - 1)});
 	$.plot($("#graph4"),dat4,opt4);
-	$("#graph4").bind("plothover",GraphOptions.tooltip);
+	$("#graph4").bind("plothover",CreateGraph.tooltip);
 
 	var dat5 = [{
 			label: 'Longer&nbsp;&nbsp;' + <?php echo $postWordCount['graph']['ratio']['longer'];?> + ' posts',
@@ -108,7 +107,7 @@ $(function() {
 			color: '#99ece0',
 			data: <?php echo $postWordCount['graph']['ratio']['short'];?>
 		}];
-	var opt5 = GraphOptions.pie;
+	var opt5 = CreateGraph.opt3;
 	$.plot($("#graph5"),dat5,opt5);
 });
 
@@ -214,6 +213,7 @@ $(function() {
 	</div>
 </div>
 </section>
+
 
 <section class="section">
 <div class="container">
