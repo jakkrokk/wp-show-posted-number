@@ -1,4 +1,6 @@
 # wp-show-posted-Numbers
+wp-show-posted-Numbers is wordpress plugin which shows your wordpress post history.
+
 
 ![screenshot](https://github.com/jakkrokk/wp-show-posted-number/blob/master/screenshot.png "screenshot")
 
